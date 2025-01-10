@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React,{useState} from "react";
 
 
 function CreateBill(){
@@ -15,9 +14,7 @@ function CreateBill(){
         console.log(formData);
     }
 
-    return (
-
-        <form onSubmit={handleSubmit}>
+    return (<form onSubmit={handleSubmit}>
             <h2>Create Bill</h2>
             <input
                 type="text"

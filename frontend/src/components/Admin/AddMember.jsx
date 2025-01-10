@@ -15,8 +15,7 @@ function AddMember(){
         console.log(formData);
     };
 
-    return (
-        <form onSubmit={handleSubmit}>
+    return (<form onSubmit={handleSubmit}>
             <h2>Add member</h2>
             <input
             type="text"
