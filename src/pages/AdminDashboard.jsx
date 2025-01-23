@@ -1,56 +1,17 @@
-import React, { useEffect } from "react";
-import { db } from "../firebase";
-import {collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
+import React from "react";
+import  ManageMembers from './../components/Admin/ManagerMembers';
+import SendNotifications from './../components/Admin/SendNotifications';
+import ManageSupplements from './../components/Admin/ManageSupplements';
 
 
 
 function AdminDashboard(){
-
-    const [members, setMembers] = useState([]);
-    const [newMember, setNewMember] =useState("");
-    
-
-    async function fetchMembers() {
-        const querySnapshot = await getDocs(collection(db,"members"));
-        setMembers(querySnapshot.docs.map((doc) => ({id : doc.id , ...doc.data}) ));
-        
-    };
-
-    async function addMember(){
-        await addDoc(collection(db,"members"),{ name : newMember});
-        setNewMember("");
-        fetchMembers();
-    };
-
-
-    async function deleteMember(){
-        await deleteDoc(doc(db,"members",id));
-        fetchMembers();
-    };
-
-    useEffect(() => {
-        fetchMembers();
-    },[]);
-
-    return (
+    return(
         <div>
             <h1>Admin Dashboard</h1>
-            <input
-                type="text"
-                value={newMember}
-                onChange={(e) => {
-                    setNewMember(e.target.value)
-                }}
-                placeholder="Add Member"
-            />
-            <button onClick={addMember} >Add Member</button>
-            <ul>
-                {members.map((member) => (
-                    <li key={member.id}>
-                        {member.name} <button onClick={ () => deleteMember(member.id)} > Delete</button>
-                    </li>
-                ))}
-            </ul>
+            <ManageMembers/>
+            <SendNotifications/>
+            <ManageSupplements/>
         </div>
     );
 };
