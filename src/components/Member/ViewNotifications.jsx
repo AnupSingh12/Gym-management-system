@@ -1,4 +1,4 @@
-import Raect,{useState,useEffect} from "react";
+import React,{useState,useEffect} from "react";
 import { db } from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 
@@ -15,11 +15,11 @@ function ViewNotifications(){
     }, []);
 
     return(
-        <div>
+        <div className="dashboard" >
             <h2>Notifications</h2>
             <ul>
                 {notifictaions.map((notifictaion)=> (
-                    <li key={notifictaion.id}>
+                    <li key={notifictaion.id} className="notification-item" >
                         {notifictaion.message} - { new Date(notifictaion.timestamp).toLocaleString()}
                     </li>
                 ))}

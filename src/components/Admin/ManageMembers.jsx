@@ -31,7 +31,7 @@ function ManageMembers(){
 
 
     return(
-        <div>
+        <div className="dashboard" >
             <h2>Manage Member</h2>
             <input 
                 type="text"
@@ -45,7 +45,7 @@ function ManageMembers(){
             <ul>
                 {members.map((member) => (
                     <li key={member.id}>
-                        {member.name} <button onClick={ () => {deleteMember(member.id)}} > Delete</button>
+                        {member.name} <button className="delete-button" onClick={ () => {deleteMember(member.id)}} > Delete</button>
                     </li>
                 ))}
             </ul>

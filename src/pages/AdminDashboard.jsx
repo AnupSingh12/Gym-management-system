@@ -1,5 +1,5 @@
 import React from "react";
-import  ManageMembers from './../components/Admin/ManagerMembers';
+import  ManageMembers from '../components/Admin/ManageMembers';
 import SendNotifications from './../components/Admin/SendNotifications';
 import ManageSupplements from './../components/Admin/ManageSupplements';
 

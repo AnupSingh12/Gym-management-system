@@ -10,16 +10,16 @@ function Cart(){
     };
 
     return(
-        <div>
+        <div className="cart" >
             <h2>Cart</h2>
             <ul>
                 {cart.map((item,index) => (
-                    <li key={index}>
+                    <li key={index} className="cart-item" >
                         {item.name} - ${item.price}
                     </li>
                 ))}
             </ul>
-            {cart.length > 0 && <button onClick={checkout} >Checkout</button>}
+            {cart.length > 0 && <button className="checkout-button" onClick={checkout} >Checkout</button>}
         </div>
     );
 

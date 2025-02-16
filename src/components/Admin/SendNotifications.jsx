@@ -19,7 +19,7 @@ function SendNotifications(){
 
 
     return(
-        <div>
+        <div className='dashboard' >
             <h2>Send Notifications</h2>
             <textarea 
                 value={notification}

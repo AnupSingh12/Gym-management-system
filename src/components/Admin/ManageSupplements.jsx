@@ -30,7 +30,7 @@ function ManageSupplements(){
 
 
     return(
-        <div>
+        <div className="dashboard" >
             <h2>Manage Supplements</h2>
             <input 
                 type="text"
@@ -45,7 +45,7 @@ function ManageSupplements(){
                 placeholder="Price"
 
             />
-            <button onClick={addSupplement} >Add Supplement</button>
+            <button className="delete-button" onClick={addSupplement} >Add Supplement</button>
             <ul>
                 {supplements.map((supplement) => (
                     <li key={supplement.id}>
